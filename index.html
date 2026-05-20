@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of MD. Tanvir Siddik, a CSE graduate specializing in machine learning, sustainable AI, data analytics, and practical web solutions.">
+  <meta name="author" content="MD. TANVIR SIDDIK">
+  <meta property="og:title" content="MD. TANVIR SIDDIK | Portfolio">
+  <meta property="og:description" content="Machine Learning Enthusiast, Data Analyst, and Sustainable AI Researcher.">
+  <meta property="og:type" content="website">
+  <title>MD. TANVIR SIDDIK | Portfolio</title>
+
+  <!-- Fonts and Frameworks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css?v=20260521-2">
+</head>
+<body>
+  <!-- Splash Loader Section -->
+  <div class="splash-screen" id="splash" aria-label="Loading portfolio">
+    <div class="splash-icons" aria-hidden="true">
+      <span class="splash-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 5h16v11H4V5Zm-2 14h20v2H2v-2Z"/></svg>
+      </span>
+      <span class="splash-icon">
+        <svg viewBox="0 0 24 24"><path d="m8.7 16.3-4.3-4.3 4.3-4.3 1.4 1.4L7.2 12l2.9 2.9-1.4 1.4Zm6.6 0-1.4-1.4 2.9-2.9-2.9-2.9 1.4-1.4 4.3 4.3-4.3 4.3Z"/></svg>
+      </span>
+      <span class="splash-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.4v3.6c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>
+      </span>
+      <span class="splash-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-8.3 8.3-1.4-1.4L17.6 5H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/></svg>
+      </span>
+      <span class="splash-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm-9 9a9 9 0 0 1 18 0v1H3v-1Z"/></svg>
+      </span>
+    </div>
+    <p class="splash-title">MY PROFILE</p>
+  </div>
+
+  <!-- Header and Navigation Section -->
+  <header class="site-header" id="site-header">
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="#home" class="brand" aria-label="Go to home">
+        <span class="brand-mark">TS</span>
+        <span>Tanvir</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certificates" class="nav-link">Certificates</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home and Hero Section -->
+    <section class="hero-section section-shell" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>Available for freelance work / Research internships</span>
+          </div>
+          <p class="eyebrow">Portfolio 2026</p>
+          <h1>Hi, I'm <span>MD. TANVIR SIDDIK</span></h1>
+          <p class="typed-line">I am a <span id="typed-roles">Machine Learning Enthusiast</span></p>
+          <p class="hero-text">Computer Science graduate specializing in machine learning, sustainable AI, and data analytics. Bridging the gap between intelligent data insights and practical, scalable web solutions.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Hire Me</a>
+            <a href="documents/cv/Tanvir_CV.pdf" class="btn btn-ghost" download>Download CV</a>
+          </div>
+          <div class="hero-socials" aria-label="Social profile links">
+            <a class="hero-social-link hero-social-link--github" href="https://github.com/Siddik73" target="_blank" rel="noopener" aria-label="GitHub profile">
+              <svg viewBox="0 0 24 24"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.4v3.6c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>
+            </a>
+            <a class="hero-social-link hero-social-link--linkedin" href="https://linkedin.com/in/md-tanvir-siddik-3745251bb" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+              <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5ZM3 9.5h4v12H3v-12Zm7 0h3.8v1.7h.1c.5-1 1.9-2 3.9-2 4.2 0 5 2.7 5 6.3v6h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8v5.4h-4v-12Z"/></svg>
+            </a>
+            <a class="hero-social-link hero-social-link--email" href="mailto:mdtanvirsiddik124@gmail.com" aria-label="Email Tanvir">
+              <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm9 7.3L5.3 7H5v10h14V7h-.3L12 12.3Zm0-2.6L15.4 7H8.6L12 9.7Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Developer illustration">
+          <div class="orbital-card">
+            <div class="orbital-ring"></div>
+            <svg class="developer-illustration" viewBox="0 0 520 520" role="img" aria-label="Developer working with data and code">
+              <defs>
+                <linearGradient id="skin" x1="0" x2="1">
+                  <stop offset="0" stop-color="#f6c29a"/>
+                  <stop offset="1" stop-color="#e89568"/>
+                </linearGradient>
+                <linearGradient id="shirt" x1="0" x2="1">
+                  <stop offset="0" stop-color="#00f0ff"/>
+                  <stop offset="1" stop-color="#14b8a6"/>
+                </linearGradient>
+                <linearGradient id="panel" x1="0" x2="1">
+                  <stop offset="0" stop-color="#0b1224"/>
+                  <stop offset="1" stop-color="#123044"/>
+                </linearGradient>
+              </defs>
+              <rect x="38" y="54" width="444" height="336" rx="34" fill="url(#panel)" stroke="#00f0ff" stroke-opacity=".35"/>
+              <rect x="76" y="92" width="170" height="32" rx="12" fill="#122b3e"/>
+              <circle cx="98" cy="108" r="6" fill="#ff6b6b"/>
+              <circle cx="120" cy="108" r="6" fill="#ffd166"/>
+              <circle cx="142" cy="108" r="6" fill="#06d6a0"/>
+              <rect x="286" y="92" width="132" height="18" rx="9" fill="#00f0ff" opacity=".3"/>
+              <rect x="286" y="124" width="96" height="18" rx="9" fill="#ffffff" opacity=".14"/>
+              <rect x="76" y="158" width="160" height="16" rx="8" fill="#00f0ff" opacity=".55"/>
+              <rect x="76" y="190" width="118" height="16" rx="8" fill="#ffffff" opacity=".18"/>
+              <rect x="76" y="222" width="154" height="16" rx="8" fill="#ffffff" opacity=".18"/>
+              <rect x="76" y="254" width="96" height="16" rx="8" fill="#00f0ff" opacity=".42"/>
+              <circle cx="352" cy="229" r="78" fill="#081427" stroke="#00f0ff" stroke-opacity=".35" stroke-width="3"/>
+              <path d="M314 244c25 20 58 20 78 0" fill="none" stroke="#00f0ff" stroke-width="8" stroke-linecap="round"/>
+              <circle cx="328" cy="214" r="8" fill="#00f0ff"/>
+              <circle cx="377" cy="214" r="8" fill="#00f0ff"/>
+              <circle cx="353" cy="202" r="58" fill="url(#skin)"/>
+              <path d="M296 201c4-55 41-84 86-66 28 11 40 34 39 66-34-12-72-15-125 0Z" fill="#111827"/>
+              <path d="M292 288c25-26 95-27 122 0l18 64H274l18-64Z" fill="url(#shirt)"/>
+              <rect x="154" y="326" width="212" height="94" rx="16" fill="#0f172a" stroke="#00f0ff" stroke-opacity=".25"/>
+              <rect x="185" y="350" width="150" height="12" rx="6" fill="#00f0ff" opacity=".55"/>
+              <rect x="205" y="374" width="110" height="10" rx="5" fill="#ffffff" opacity=".18"/>
+              <rect x="118" y="420" width="284" height="30" rx="15" fill="#0e7490"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section-shell" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">About Me</p>
+        <h2>Building Meaningful Digital Experiences</h2>
+      </div>
+      <div class="about-grid">
+        <article class="about-story reveal">
+          <p>I am a CSE graduate from Daffodil International University with a passion for translating research into practical solutions for agriculture and healthcare. From training convolutional neural networks to optimizing corporate workflows, I thrive on data-driven decision-making.</p>
+          <div class="about-tags" aria-label="Core focus areas">
+            <span>Machine Learning</span>
+            <span>Data Analytics</span>
+            <span>Sustainable AI</span>
+            <span>Web Systems</span>
+          </div>
+        </article>
+        <div class="drive-grid">
+          <article class="info-card reveal">
+            <span class="card-icon">01</span>
+            <h3>Languages & Frameworks</h3>
+            <p>Python, JavaScript, C, HTML5, CSS3, React (Basic), SQL.</p>
+          </article>
+          <article class="info-card reveal">
+            <span class="card-icon">02</span>
+            <h3>Education</h3>
+            <p>Bachelor of Science in Computer Science and Engineering, Daffodil International University. CGPA: 2.94/4.00, Thesis Grade: 3.75/4.00.</p>
+          </article>
+          <article class="info-card reveal">
+            <span class="card-icon">03</span>
+            <h3>Research Interests</h3>
+            <p>Deep Learning, Sustainable AI, AgriTech innovation, Intelligent Web-Based Systems, and Data Visualization.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section section-shell" id="projects">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Featured Work</p>
+        <h2>Projects & Publications</h2>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-visual ai-visual">
+            <span>AI</span>
+          </div>
+          <div class="project-body">
+            <h3>Smart Farming Web App</h3>
+            <p>A deep learning platform integrating custom CNN models for real-time paddy leaf disease identification in sustainable agriculture, achieving an 89% classification accuracy.</p>
+            <div class="badge-row">
+              <span>Python</span>
+              <span>CNN</span>
+              <span>Deep Learning</span>
+              <span>Image Preprocessing</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Siddik73" target="_blank" rel="noopener">GitHub</a>
+              <a href="mailto:mdtanvirsiddik124@gmail.com?subject=Smart%20Farming%20Web%20App%20Live%20Demo%20Request">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual paper-visual">
+            <span>IEEE</span>
+          </div>
+          <div class="project-body">
+            <h3>IEEE Research Publication</h3>
+            <p>Published Paper: "Play Store Review Data Analysis: Dock Time Application" presented at the IEEE CS BDC Summer Symposium. Derived actionable insights using natural language processing and review metrics.</p>
+            <div class="badge-row">
+              <span>Data Analytics</span>
+              <span>NLP</span>
+              <span>Research</span>
+              <span>Python</span>
+            </div>
+            <div class="project-actions">
+              <a href="mailto:mdtanvirsiddik124@gmail.com?subject=Play%20Store%20Review%20Data%20Analysis%20Paper%20Request">Read Paper</a>
+              <a href="mailto:mdtanvirsiddik124@gmail.com?subject=IEEE%20Publication%20Link%20Request">IEEE Link</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-visual automation-visual">
+            <span>DATA</span>
+          </div>
+          <div class="project-body">
+            <h3>Automated Lead Generation Workflow</h3>
+            <p>Designed an automated enterprise data workflow mapping regional brand metrics and local market entities into structural lead funnels via Google Map scripting.</p>
+            <div class="badge-row">
+              <span>Automation</span>
+              <span>Excel</span>
+              <span>Lead Gen</span>
+              <span>Scripting</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Siddik73" target="_blank" rel="noopener">GitHub</a>
+              <a href="mailto:mdtanvirsiddik124@gmail.com?subject=Automated%20Lead%20Generation%20Workflow%20Request">View Project</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Certificates and Achievements Section -->
+    <section class="certificates-section section-shell" id="certificates">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Credentials</p>
+        <h2>Certificates & Achievements</h2>
+      </div>
+
+      <article class="document-panel reveal">
+        <div>
+          <p class="panel-kicker">Document Library</p>
+          <h3>Complete Certificates & Achievements PDF</h3>
+          <p>All certificates and recognition documents are stored in a separate folder and linked here for easy viewing, editing, replacing, or deleting.</p>
+        </div>
+        <div class="document-actions">
+          <a class="btn btn-primary" href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Certificates</a>
+          <a class="btn btn-ghost" href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Achievements</a>
+        </div>
+      </article>
+
+      <div class="credentials-layout">
+        <div class="credential-column">
+          <div class="column-title reveal">
+            <span>Certificates</span>
+          </div>
+          <div class="credential-grid">
+            <article class="credential-card reveal">
+              <span class="credential-icon">ML</span>
+              <h3>AI & ML with Python</h3>
+              <p>Certified training focused on machine learning workflows, model thinking, and Python-based implementation.</p>
+              <a href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Proof</a>
+            </article>
+            <article class="credential-card reveal">
+              <span class="credential-icon">AI</span>
+              <h3>AI+ Prompt Engineer Level 1</h3>
+              <p>Prompt engineering and generative AI certification covering practical AI interaction patterns.</p>
+              <a href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Proof</a>
+            </article>
+            <article class="credential-card reveal">
+              <span class="credential-icon">NW</span>
+              <h3>CCNA</h3>
+              <p>Cisco Networking Academy credential covering routing, switching, and network fundamentals.</p>
+              <a href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Proof</a>
+            </article>
+            <article class="credential-card reveal">
+              <span class="credential-icon">PY</span>
+              <h3>Mastery in Pandas using Python</h3>
+              <p>Data manipulation and analysis certification focused on Python, Pandas, and structured workflows.</p>
+              <a href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Proof</a>
+            </article>
+            <article class="credential-card reveal">
+              <span class="credential-icon">PX</span>
+              <h3>Agent X AI Prompting Competition</h3>
+              <p>Participation and recognition connected to applied AI prompting and problem-solving challenges.</p>
+              <a href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Proof</a>
+            </article>
+          </div>
+        </div>
+
+        <div class="credential-column">
+          <div class="column-title reveal">
+            <span>Achievements</span>
+          </div>
+          <div class="credential-grid">
+            <article class="credential-card achievement reveal">
+              <span class="credential-icon">ICT</span>
+              <h3>ICT Olympiad Bangladesh Quarter-Finalist</h3>
+              <p>Quarter-finalist recognition in ICT Olympiad Bangladesh Season 2.</p>
+              <a href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Achievement</a>
+            </article>
+            <article class="credential-card achievement reveal">
+              <span class="credential-icon">MIST</span>
+              <h3>MIST LeetCon Appreciation</h3>
+              <p>Certificate of appreciation for MIST LeetCon HackMeIfYouCan participation.</p>
+              <a href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Achievement</a>
+            </article>
+            <article class="credential-card achievement reveal">
+              <span class="credential-icon">EX</span>
+              <h3>Excelerate Scholarship</h3>
+              <p>Competitive scholarship recognition connected to Excelerate program participation.</p>
+              <a href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Achievement</a>
+            </article>
+            <article class="credential-card achievement reveal">
+              <span class="credential-icon">MS</span>
+              <h3>Agent X Recognition</h3>
+              <p>Recognition award from Agent X AI Prompting Competition with NetCom Learning and Microsoft.</p>
+              <a href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Achievement</a>
+            </article>
+            <article class="credential-card achievement reveal">
+              <span class="credential-icon">PUB</span>
+              <h3>IEEE Publication</h3>
+              <p>Publication recognition for Play Store Review Data Analysis: Dock Time Application.</p>
+              <a href="documents/certificates/Tanvir_Certifications_Achievements.pdf" target="_blank" rel="noopener">View Achievement</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section section-shell" id="services">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Services</p>
+        <h2>Focused Technical Support</h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <span>01</span>
+          <h3>Machine Learning & CNN Deployment</h3>
+          <p>Custom model training, image processing, model evaluation.</p>
+        </article>
+        <article class="service-card reveal">
+          <span>02</span>
+          <h3>Data Visualization & Dashboards</h3>
+          <p>Interactive analytical storytelling using Power BI, Tableau, and Python.</p>
+        </article>
+        <article class="service-card reveal">
+          <span>03</span>
+          <h3>ERP Implementation & SQL Reporting</h3>
+          <p>Workflow optimizations, database queries, system migrations.</p>
+        </article>
+        <article class="service-card reveal">
+          <span>04</span>
+          <h3>Digital Marketing Analytics</h3>
+          <p>SEO audits, keyword tracking, user behavior research.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section section-shell" id="contact">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's Build Something Useful</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Direct Details</h3>
+          <a href="mailto:mdtanvirsiddik124@gmail.com">mdtanvirsiddik124@gmail.com</a>
+          <p>Rajshahi, Bangladesh</p>
+          <div class="contact-socials" aria-label="Social profile links">
+            <a class="contact-social-link contact-social-link--github" href="https://github.com/Siddik73" target="_blank" rel="noopener" aria-label="Open GitHub profile">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.4v3.6c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>
+            </a>
+            <a class="contact-social-link contact-social-link--linkedin" href="https://linkedin.com/in/md-tanvir-siddik-3745251bb" target="_blank" rel="noopener" aria-label="Open LinkedIn profile">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5ZM3 9.5h4v12H3v-12Zm7 0h3.8v1.7h.1c.5-1 1.9-2 3.9-2 4.2 0 5 2.7 5 6.3v6h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8v5.4h-4v-12Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contact-form">
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text" placeholder="Your Name" required>
+          <label for="email">Your Email</label>
+          <input id="email" name="email" type="email" placeholder="Your Email" required>
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <p>&copy; 2026 MD. TANVIR SIDDIK. All Rights Reserved.</p>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top" type="button" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24"><path d="m12 5 8 8-1.4 1.4L13 8.8V21h-2V8.8l-5.6 5.6L4 13l8-8Z"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
