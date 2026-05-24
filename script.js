@@ -163,6 +163,79 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.reset();
     showToast("Your email app is opening with the message ready.");
   });
+
+  // Floating cursor video preview for 3D WEB Card
+  const web3dCard = document.querySelector('.web3d-card');
+  const tooltip = document.getElementById('video-preview-tooltip');
+  const tooltipVideo = document.getElementById('tooltip-video');
+  const projectVideo = document.querySelector('.project-video');
+
+  if (web3dCard) {
+    let isHovered = false;
+
+    web3dCard.addEventListener('mouseenter', () => {
+      isHovered = true;
+      if (tooltipVideo) {
+        tooltipVideo.play().catch(e => console.log('Video play error:', e));
+      }
+      if (projectVideo) {
+        projectVideo.play().catch(e => console.log('Video play error:', e));
+        projectVideo.classList.remove('opacity-0');
+        projectVideo.classList.add('opacity-100');
+      }
+      if (tooltip && window.gsap) {
+        window.gsap.to(tooltip, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.4,
+          ease: 'power3.out'
+        });
+      }
+    });
+
+    web3dCard.addEventListener('mouseleave', () => {
+      isHovered = false;
+      if (projectVideo) {
+        projectVideo.pause();
+        projectVideo.classList.remove('opacity-100');
+        projectVideo.classList.add('opacity-0');
+      }
+      if (tooltip) {
+        if (window.gsap) {
+          window.gsap.to(tooltip, {
+            opacity: 0,
+            scale: 0.75,
+            duration: 0.3,
+            ease: 'power3.in',
+            onComplete: () => {
+              if (!isHovered && tooltipVideo) {
+                tooltipVideo.pause();
+              }
+            }
+          });
+        } else {
+          tooltip.style.opacity = '0';
+          if (tooltipVideo) tooltipVideo.pause();
+        }
+      }
+    });
+
+    web3dCard.addEventListener('mousemove', (e) => {
+      if (tooltip) {
+        if (window.gsap) {
+          window.gsap.to(tooltip, {
+            x: e.clientX + 20,
+            y: e.clientY + 20,
+            duration: 0.25,
+            ease: 'power2.out'
+          });
+        } else {
+          tooltip.style.left = `${e.clientX + 20}px`;
+          tooltip.style.top = `${e.clientY + 20}px`;
+        }
+      }
+    });
+  }
 });
 
 function showToast(message) {

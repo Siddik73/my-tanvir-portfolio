@@ -1,0 +1,37 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# Browser Automation Profiles
+.chrome-profile/
+.edge-profile/
+chrome-profile/
+edge-profile/
+
+# Temporary / Log Files
+*.log
+*stderr*.txt
+*stdout*.txt
+stderr.txt
+stderr3.txt
+stdout.txt
+stdout3.txt
+
+# Local Environment & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.production
+.env.development
+.env.staging
+
+# Editor Directories
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

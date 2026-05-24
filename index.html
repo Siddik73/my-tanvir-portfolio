@@ -241,6 +241,31 @@
             </div>
           </div>
         </article>
+
+        <article class="project-card reveal web3d-card">
+          <div class="project-visual web3d-visual relative overflow-hidden">
+            <span>3D WEB</span>
+            <div class="absolute bottom-2 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-bold text-white uppercase tracking-wider border border-white/10 flex items-center gap-1.5 opacity-80 pointer-events-none transition-opacity duration-300">
+              <span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span> Live Demo Play
+            </div>
+            <video class="project-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 pointer-events-none" src="assets/videos/3d-portfolio-demo.mp4" loop muted playsinline></video>
+          </div>
+          <div class="project-body">
+            <h3>3D Creator Portfolio Web App</h3>
+            <p>A highly interactive, pixel-perfect 3D-themed portfolio featuring magnetic mouse physics, scroll-driven text reveals, and complex sticky parallax animations built to showcase digital services.</p>
+            <div class="badge-row">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Tailwind v4</span>
+              <span>Framer Motion</span>
+              <span>Vite</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Siddik73/tanvirfolio-website" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://tanvirfolio-website.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -414,6 +439,15 @@
   <button class="scroll-top" id="scroll-top" type="button" aria-label="Scroll to top">
     <svg viewBox="0 0 24 24"><path d="m12 5 8 8-1.4 1.4L13 8.8V21h-2V8.8l-5.6 5.6L4 13l8-8Z"/></svg>
   </button>
+
+  <!-- Floating video preview tooltip -->
+  <div id="video-preview-tooltip" class="fixed pointer-events-none z-50 opacity-0 w-[300px] h-[170px] rounded-2xl overflow-hidden border border-white/20 bg-black/60 backdrop-blur-md shadow-[0_20px_50px_rgba(168,85,247,0.3)] scale-75 origin-center transition-all duration-300 ease-out hidden md:block">
+    <video id="tooltip-video" class="w-full h-full object-cover" src="assets/videos/3d-portfolio-demo.mp4" loop muted playsinline></video>
+    <div class="absolute bottom-2 left-3 text-[10px] font-bold text-white uppercase tracking-widest flex items-center gap-1.5">
+      <span class="w-2 h-2 bg-purple-500 rounded-full animate-ping"></span>
+      3D Portfolio Preview
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
