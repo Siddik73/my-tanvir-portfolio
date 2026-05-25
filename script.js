@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.Typed) {
     new window.Typed("#typed-roles", {
       strings: [
-        "Machine Learning Enthusiast",
+        "Machine Learning Developer",
         "Data Analyst",
         "Sustainable AI Researcher"
       ],
@@ -148,9 +148,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = String(formData.get("name") || "").trim();
     const email = String(formData.get("email") || "").trim();
     const message = String(formData.get("message") || "").trim();
+    const emailInput = contactForm.querySelector('input[type="email"]');
 
     if (!name || !email || !message) {
       showToast("Please fill in your name, email, and message.");
+      return;
+    }
+
+    if (emailInput && !emailInput.validity.valid) {
+      showToast("Please enter a valid email address.");
       return;
     }
 
@@ -169,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tooltip = document.getElementById('video-preview-tooltip');
   const tooltipVideo = document.getElementById('tooltip-video');
   const projectVideo = document.querySelector('.project-video');
+  const ignoreMediaError = () => {};
 
   if (web3dCard) {
     let isHovered = false;
@@ -176,10 +183,10 @@ document.addEventListener("DOMContentLoaded", () => {
     web3dCard.addEventListener('mouseenter', () => {
       isHovered = true;
       if (tooltipVideo) {
-        tooltipVideo.play().catch(e => console.log('Video play error:', e));
+        tooltipVideo.play().catch(ignoreMediaError);
       }
       if (projectVideo) {
-        projectVideo.play().catch(e => console.log('Video play error:', e));
+        projectVideo.play().catch(ignoreMediaError);
         projectVideo.classList.remove('opacity-0');
         projectVideo.classList.add('opacity-100');
       }
