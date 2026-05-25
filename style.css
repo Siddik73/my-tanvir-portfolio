@@ -1225,9 +1225,19 @@ textarea {
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
+}
+
+@media (min-width: 820px) {
+  .contact-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-form textarea,
+  .contact-form button {
+    grid-column: 1 / -1;
+  }
 }
 
 .contact-form input,
@@ -1612,4 +1622,34 @@ textarea {
     scroll-behavior: auto !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+/* Floating WhatsApp Action Button */
+.whatsapp-float {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(37, 211, 102, 0.36);
+  border-radius: 50%;
+  color: #ffffff;
+  background: #25d366;
+  box-shadow: 0 18px 34px rgba(37, 211, 102, 0.3);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 24px 44px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-float svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }

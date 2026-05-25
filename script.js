@@ -160,14 +160,15 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const subject = encodeURIComponent(`Portfolio message from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
+    const text = `*New Portfolio Message* 🚀\n\n` +
+                 `*Name:* ${name}\n` +
+                 `*Email:* ${email}\n\n` +
+                 `*Message:*\n${message}`;
+    const whatsappUrl = `https://wa.me/8801706683622?text=${encodeURIComponent(text)}`;
 
-    window.location.href = `mailto:mdtanvirsiddik124@gmail.com?subject=${subject}&body=${body}`;
+    window.open(whatsappUrl, "_blank");
     contactForm.reset();
-    showToast("Your email app is opening with the message ready.");
+    showToast("Opening WhatsApp to send your message...");
   });
 
   // Floating cursor video preview for 3D WEB Card
