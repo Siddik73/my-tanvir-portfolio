@@ -175,24 +175,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const web3dCard = document.querySelector('.web3d-card');
   const pheroCard = document.querySelector('.phero-card');
   const tooltip = document.getElementById('video-preview-tooltip');
-  const tooltipVideo = document.getElementById('tooltip-video');
   const tooltipPing = document.getElementById('tooltip-ping');
   const tooltipText = document.getElementById('tooltip-text');
   const ignoreMediaError = () => {};
 
-  const setupVideoHover = (card, tooltipVideoSrc, tooltipLabel, pingClassToAdd) => {
+  const setupVideoHover = (card, targetVideoId, tooltipLabel, pingClassToAdd) => {
     if (!card) return;
     let isHovered = false;
     const cardVideo = card.querySelector('.project-video');
+    const targetTooltipVideo = document.getElementById(targetVideoId);
 
     card.addEventListener('mouseenter', () => {
       isHovered = true;
-      if (tooltipVideo) {
-        if (!tooltipVideo.src.includes(tooltipVideoSrc)) {
-          tooltipVideo.src = tooltipVideoSrc;
-          tooltipVideo.load();
-        }
-        tooltipVideo.play().catch(ignoreMediaError);
+      
+      // Hide all tooltip videos first
+      document.querySelectorAll('.tooltip-video').forEach(video => {
+        video.classList.add('hidden');
+        video.pause();
+      });
+
+      if (targetTooltipVideo) {
+        targetTooltipVideo.classList.remove('hidden');
+        targetTooltipVideo.play().catch(ignoreMediaError);
       }
       if (tooltipText) {
         tooltipText.textContent = tooltipLabel;
@@ -206,13 +210,18 @@ document.addEventListener("DOMContentLoaded", () => {
         cardVideo.classList.remove('opacity-0');
         cardVideo.classList.add('opacity-100');
       }
-      if (tooltip && window.gsap) {
-        window.gsap.to(tooltip, {
-          opacity: 1,
-          scale: 1,
-          duration: 0.4,
-          ease: 'power3.out'
-        });
+      if (tooltip) {
+        if (window.gsap) {
+          window.gsap.to(tooltip, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            ease: 'power3.out'
+          });
+        } else {
+          tooltip.style.opacity = '1';
+          tooltip.style.transform = 'scale(1)';
+        }
       }
     });
 
@@ -231,14 +240,15 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 0.3,
             ease: 'power3.in',
             onComplete: () => {
-              if (!isHovered && tooltipVideo) {
-                tooltipVideo.pause();
+              if (!isHovered && targetTooltipVideo) {
+                targetTooltipVideo.pause();
               }
             }
           });
         } else {
           tooltip.style.opacity = '0';
-          if (tooltipVideo) tooltipVideo.pause();
+          tooltip.style.transform = 'scale(0.75)';
+          if (targetTooltipVideo) targetTooltipVideo.pause();
         }
       }
     });
@@ -260,8 +270,102 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  setupVideoHover(web3dCard, 'assets/videos/3d-portfolio-demo.mp4', '3D Portfolio Preview', 'bg-purple-500');
-  setupVideoHover(pheroCard, 'assets/videos/phero-client-demo.mp4', 'Client Project Preview', 'bg-orange-500');
+  setupVideoHover(web3dCard, 'tooltip-video-3d', '3D Portfolio Preview', 'bg-purple-500');
+  setupVideoHover(pheroCard, 'tooltip-video-phero', 'Client Project Preview', 'bg-orange-500');
+
+  // Live Preview Drawer (Right Side Split Screen Panel)
+  const previewOverlay = document.getElementById('preview-overlay');
+  const previewDrawer = document.getElementById('preview-drawer');
+  const previewTitle = document.getElementById('preview-title');
+  const previewIframe = document.getElementById('preview-iframe');
+  const previewLoader = document.getElementById('preview-loader');
+  const previewGithubFallback = document.getElementById('preview-github-fallback');
+  const previewOpenTab = document.getElementById('preview-open-tab');
+  const previewClose = document.getElementById('preview-close');
+  const previewGithubBtn = document.getElementById('preview-github-btn');
+
+  const formatUrlForPreview = (url) => {
+    if (url.includes('drive.google.com')) {
+      return url.replace(/\/view(\?.*)?$/, '/preview').replace(/\/view\/$/, '/preview').replace(/\/view$/, '/preview');
+    }
+    return url;
+  };
+
+  const openPreview = (url, titleText) => {
+    if (!previewDrawer || !previewOverlay) return;
+
+    if (previewIframe) {
+      previewIframe.classList.add('hidden');
+      previewIframe.src = '';
+    }
+    if (previewGithubFallback) previewGithubFallback.classList.add('hidden');
+    if (previewLoader) previewLoader.classList.remove('hidden');
+
+    if (previewTitle) previewTitle.textContent = titleText;
+    if (previewOpenTab) previewOpenTab.href = url;
+
+    previewOverlay.style.opacity = '1';
+    previewOverlay.style.pointerEvents = 'auto';
+    previewDrawer.style.transform = 'translateX(0)';
+
+    if (url.includes('github.com') && !url.includes('github.io')) {
+      if (previewLoader) previewLoader.classList.add('hidden');
+      if (previewGithubFallback) {
+        previewGithubFallback.classList.remove('hidden');
+        if (previewGithubBtn) previewGithubBtn.href = url;
+      }
+    } else {
+      const formattedUrl = formatUrlForPreview(url);
+      if (previewIframe) {
+        previewIframe.src = formattedUrl;
+        previewIframe.classList.remove('hidden');
+      }
+    }
+  };
+
+  const closePreview = () => {
+    if (!previewDrawer || !previewOverlay) return;
+    previewOverlay.style.opacity = '0';
+    previewOverlay.style.pointerEvents = 'none';
+    previewDrawer.style.transform = 'translateX(100%)';
+    if (previewIframe) {
+      previewIframe.src = '';
+    }
+  };
+
+  if (previewClose) previewClose.addEventListener('click', closePreview);
+  if (previewOverlay) previewOverlay.addEventListener('click', closePreview);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closePreview();
+    }
+  });
+
+  if (previewIframe) {
+    previewIframe.addEventListener('load', () => {
+      if (previewLoader) previewLoader.classList.add('hidden');
+    });
+  }
+
+  // Intercept all external portfolio, code, and credential links
+  const clickableLinks = document.querySelectorAll(
+    '.project-actions a, .credential-card a, .document-actions a, .hero-actions a'
+  );
+
+  clickableLinks.forEach(link => {
+    const href = link.getAttribute('href') || '';
+    if (href.startsWith('#') || href.startsWith('mailto:') || link.hasAttribute('download')) {
+      return;
+    }
+
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parentCard = link.closest('article, .credential-card, .document-panel, .hero-copy');
+      const titleText = parentCard?.querySelector('h3')?.textContent || 'Document Preview';
+      openPreview(href, titleText);
+    });
+  });
 });
 
 function showToast(message) {

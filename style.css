@@ -1680,3 +1680,13 @@ textarea {
   letter-spacing: 0.15em;
   height: 200px;
 }
+
+/* Custom Live Preview Drawer Transitions */
+#preview-drawer {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Tooltip Opacity-only Transition (prevents mouse follow lag on transforms) */
+#video-preview-tooltip {
+  transition: opacity 0.3s ease-out !important;
+}
