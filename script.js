@@ -207,8 +207,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (cardVideo) {
         cardVideo.currentTime = 0;
         cardVideo.play().catch(ignoreMediaError);
+        cardVideo.style.zIndex = '20';
+        cardVideo.style.opacity = '1';
         cardVideo.classList.remove('opacity-0');
         cardVideo.classList.add('opacity-100');
+      }
+      const thumbnail = card.querySelector('.project-visual img');
+      if (thumbnail) {
+        thumbnail.style.opacity = '0';
       }
       if (tooltip) {
         if (window.gsap) {
@@ -229,8 +235,15 @@ document.addEventListener("DOMContentLoaded", () => {
       isHovered = false;
       if (cardVideo) {
         cardVideo.pause();
+        cardVideo.currentTime = 0;
+        cardVideo.style.zIndex = '0';
+        cardVideo.style.opacity = '0';
         cardVideo.classList.remove('opacity-100');
         cardVideo.classList.add('opacity-0');
+      }
+      const thumbnail = card.querySelector('.project-visual img');
+      if (thumbnail) {
+        thumbnail.style.opacity = '1';
       }
       if (tooltip) {
         if (window.gsap) {
