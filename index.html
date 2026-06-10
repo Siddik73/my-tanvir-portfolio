@@ -292,6 +292,35 @@
               </div>
             </article>
 
+            <article class="project-card reveal phero-card">
+              <div class="project-visual phero-visual relative overflow-hidden">
+                <span>CLIENT PROJ</span>
+                <div class="absolute bottom-2 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-bold text-white uppercase tracking-wider border border-white/10 flex items-center gap-1.5 opacity-80 pointer-events-none transition-opacity duration-300">
+                  <span class="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse"></span> Brutalist AI Sim
+                </div>
+                <!-- Hover Video Overlay Element -->
+                <video class="project-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 pointer-events-none" src="assets/videos/phero-client-demo.mp4" loop muted playsinline></video>
+              </div>
+              <div class="project-body">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-[9px] font-mono uppercase bg-orange-500/10 border border-orange-500/20 px-2 py-0.5 rounded text-[#F27D26] font-bold">Foreign Client</span>
+                </div>
+                <h3>AI-Driven Brutalist Portfolio</h3>
+                <p>Designed and engineered an ultra-modern portfolio featuring an interactive resume customizer, direct client-side terminal sandboxes, and secure SMTP proxy simulations wrapped in a stunning cosmic orange industrial layout.</p>
+                <div class="badge-row">
+                  <span>React 19</span>
+                  <span>TypeScript</span>
+                  <span>Tailwind v4</span>
+                  <span>Framer Motion</span>
+                  <span>Vite</span>
+                </div>
+                <div class="project-actions">
+                  <a href="https://github.com/Siddik73/phero" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a href="https://phero-pi.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+              </div>
+            </article>
+
             <article class="project-card reveal">
               <div class="project-visual robotics-visual">
                 <span>IOT</span>
@@ -508,8 +537,8 @@
   <div id="video-preview-tooltip" class="fixed pointer-events-none z-50 opacity-0 w-[300px] h-[170px] rounded-2xl overflow-hidden border border-white/20 bg-black/60 backdrop-blur-md shadow-[0_20px_50px_rgba(168,85,247,0.3)] scale-75 origin-center transition-all duration-300 ease-out hidden md:block">
     <video id="tooltip-video" class="w-full h-full object-cover" src="assets/videos/3d-portfolio-demo.mp4" loop muted playsinline></video>
     <div class="absolute bottom-2 left-3 text-[10px] font-bold text-white uppercase tracking-widest flex items-center gap-1.5">
-      <span class="w-2 h-2 bg-purple-500 rounded-full animate-ping"></span>
-      3D Portfolio Preview
+      <span id="tooltip-ping" class="w-2 h-2 bg-purple-500 rounded-full animate-ping"></span>
+      <span id="tooltip-text">3D Portfolio Preview</span>
     </div>
   </div>
 

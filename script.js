@@ -171,25 +171,40 @@ document.addEventListener("DOMContentLoaded", () => {
     showToast("Opening WhatsApp to send your message...");
   });
 
-  // Floating cursor video preview for 3D WEB Card
+  // Floating cursor video preview for 3D WEB Card & Client Portfolio Card
   const web3dCard = document.querySelector('.web3d-card');
+  const pheroCard = document.querySelector('.phero-card');
   const tooltip = document.getElementById('video-preview-tooltip');
   const tooltipVideo = document.getElementById('tooltip-video');
-  const projectVideo = document.querySelector('.project-video');
+  const tooltipPing = document.getElementById('tooltip-ping');
+  const tooltipText = document.getElementById('tooltip-text');
   const ignoreMediaError = () => {};
 
-  if (web3dCard) {
+  const setupVideoHover = (card, tooltipVideoSrc, tooltipLabel, pingClassToAdd) => {
+    if (!card) return;
     let isHovered = false;
+    const cardVideo = card.querySelector('.project-video');
 
-    web3dCard.addEventListener('mouseenter', () => {
+    card.addEventListener('mouseenter', () => {
       isHovered = true;
       if (tooltipVideo) {
+        if (!tooltipVideo.src.includes(tooltipVideoSrc)) {
+          tooltipVideo.src = tooltipVideoSrc;
+          tooltipVideo.load();
+        }
         tooltipVideo.play().catch(ignoreMediaError);
       }
-      if (projectVideo) {
-        projectVideo.play().catch(ignoreMediaError);
-        projectVideo.classList.remove('opacity-0');
-        projectVideo.classList.add('opacity-100');
+      if (tooltipText) {
+        tooltipText.textContent = tooltipLabel;
+      }
+      if (tooltipPing) {
+        tooltipPing.className = `w-2 h-2 rounded-full animate-ping ${pingClassToAdd}`;
+      }
+      if (cardVideo) {
+        cardVideo.currentTime = 0;
+        cardVideo.play().catch(ignoreMediaError);
+        cardVideo.classList.remove('opacity-0');
+        cardVideo.classList.add('opacity-100');
       }
       if (tooltip && window.gsap) {
         window.gsap.to(tooltip, {
@@ -201,12 +216,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    web3dCard.addEventListener('mouseleave', () => {
+    card.addEventListener('mouseleave', () => {
       isHovered = false;
-      if (projectVideo) {
-        projectVideo.pause();
-        projectVideo.classList.remove('opacity-100');
-        projectVideo.classList.add('opacity-0');
+      if (cardVideo) {
+        cardVideo.pause();
+        cardVideo.classList.remove('opacity-100');
+        cardVideo.classList.add('opacity-0');
       }
       if (tooltip) {
         if (window.gsap) {
@@ -228,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    web3dCard.addEventListener('mousemove', (e) => {
+    card.addEventListener('mousemove', (e) => {
       if (tooltip) {
         if (window.gsap) {
           window.gsap.to(tooltip, {
@@ -243,7 +258,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
-  }
+  };
+
+  setupVideoHover(web3dCard, 'assets/videos/3d-portfolio-demo.mp4', '3D Portfolio Preview', 'bg-purple-500');
+  setupVideoHover(pheroCard, 'assets/videos/phero-client-demo.mp4', 'Client Project Preview', 'bg-orange-500');
 });
 
 function showToast(message) {

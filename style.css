@@ -1653,3 +1653,30 @@ textarea {
   height: 24px;
   fill: currentColor;
 }
+
+/* Phero Client Card Base Styling */
+.phero-card {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+.phero-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(242, 125, 38, 0.4) !important; /* Cosmic Orange border highlight on container hover */
+}
+
+/* Gradient Visual Header Container for the Brutalist Orange Client App */
+.phero-visual {
+  background: linear-gradient(135deg, #0e1112 0%, #17100b 100%),
+              radial-gradient(circle at top right, rgba(242, 125, 38, 0.15), transparent 70%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #F27D26; /* Cosmic Orange theme color indicator */
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+  height: 200px;
+}

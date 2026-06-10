@@ -35,3 +35,6 @@ stdout3.txt
 *.njsproj
 *.sln
 *.sw?
+
+# Raw client videos
+assets/videos/Clients Portfolio Project 1.mp4
